@@ -47,7 +47,9 @@
                                         <th>No</th>
                                         <th>NIM</th>
                                         <th>Nama</th>
+                                        <th>Foto</th>
                                         <th>Telp</th>
+                                        <th>Email</th>
                                         <th>Prodi</th>
                                         <th>Aksi</th>
 
@@ -60,14 +62,23 @@
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $m->nim }}</td>
                                             <td>{{ $m->nama }}</td>
+                                            <td>
+                                                @if ($m->foto)
+                                                    <img src="{{ asset('storage/' . $m->foto) }}" alt="Foto Mahasiswa"
+                                                        class="img-thumbnail" style="width: 100px; height: 100px;">
+                                                @else
+                                                    <img src="{{ asset('images/default.png') }}" alt="Foto Mahasiswa"
+                                                        class="img-thumbnail" style="width: 100px; height: 100px;">
+                                                @endif
                                             <td>{{ $m->telp }}</td>
+                                            <td>{{ $m->email }}</td>
                                             <td>{{ $m->prodi->nama }}</td>
                                             <td><a href="{{ url("mahasiswa/$m->nim/edit") }}" class="btn btn-warning">Edit</a>
                                                 <form action="{{ url("mahasiswa/$m->nim") }}" method="POST" class="d-inline">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger"
-                                                        onclick="return confirm('Yakin ingin menghapus data ini?')">Hapus</button>;
+                                                        onclick="return confirm('Yakin ingin menghapus data ini?')">Hapus</button>
                                                 </form>
                                             </td>
                                         </tr>
