@@ -7,7 +7,7 @@
     <div class="app-content-header">
         <!--begin::Container-->
         <div class="container-fluid">
-            <!--begin::Row--> 
+            <!--begin::Row-->
             <div class="row">
                 <div class="col-sm-6">
                     <h3 class="mb-0">Dashboard</h3>
@@ -35,7 +35,7 @@
                         <div class="card-header">
                             <h3 class="card-title">Data Mahasiswa</h3>
                             <div class="card-tools">
-                                <a href="tambahmahasiswa.php" class="btn btn-primary">Tambah</a>
+                                <a href="/mahasiswa/create" class="btn btn-primary">Tambah</a>
                             </div>
                         </div>
                         <!-- /.card-header -->
@@ -62,11 +62,14 @@
                                             <td>{{ $m->nama }}</td>
                                             <td>{{ $m->telp }}</td>
                                             <td>{{ $m->prodi->nama }}</td>
-                                            <td><a href="deletemahasiswa.php?nim={{ $m->nim }}"
-                                                   onclick="return confirm('Yakin Ingin Hapus?')"
-                                                   class="btn btn-danger">Delete</a> | <a
-                                                   href="editmahasiswa.php?nim={{ $m->nim }}"
-                                                   class="btn btn-warning">Edit</a></td>
+                                            <td><a href="{{ url("mahasiswa/$m->nim/edit") }}" class="btn btn-warning">Edit</a>
+                                                <form action="{{ url("mahasiswa/$m->nim") }}" method="POST" class="d-inline">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger"
+                                                        onclick="return confirm('Yakin ingin menghapus data ini?')">Hapus</button>;
+                                                </form>
+                                            </td>
                                         </tr>
                                     @endforeach;
                                     </tr>

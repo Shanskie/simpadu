@@ -9,7 +9,7 @@ class Mahasiswa extends Model
 {
     //
     protected $table = 'mahasiswa';
-    protected $primarykey = 'nim';
+    protected $primaryKey = 'nim';
     protected $keyType = 'string';
 
     protected $fillable = [
@@ -21,7 +21,6 @@ class Mahasiswa extends Model
         'password',
         'foto',
         'id_prodi'
-
     ];
 
 

@@ -40,28 +40,77 @@
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="nim" class="form-label">NIM</label>
-                                    <input type="text" name="nim" id="nim" class="form-control" required>
+                                    <input type="text" name="nim" id="nim"
+                                    class="form-control @error('nim')is-invalid @enderror">
+                                    @error('nim')
+                                    <div class="invalid-feedback">
+                                    </div>
+                                    @enderror
+
+
                                 </div>
                                 <div class="form-group">
                                     <label for="nim" class="form-label">Password</label>
-                                    <input type="pxxxassword" name="password" id="password" class="form-control" required>
+                                    <input type="password" name="password" id="password"
+                                     class="form-control @error('password')is-invalid @enderror">
+                                    @error('password')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                    @enderror
+
+
                                 </div>
                                 <div class="form-group">
                                     <label for="nim" class="form-label">Nama Mahasiswa</label>
-                                    <input type="text" name="nama" id="nama" class="form-control" required>
+                                    <input type="text" name="nama" id="nama"
+                                     class="form-control @error('nama')is-invalid @enderror">
+                                     @error('nama')
+                                     <div class="invalid-feedback">
+                                        {{ $message }}
+                                     </div>
+                                     @enderror
+
+
                                 </div>
                                 <table>
                                     <div class="form-group">
                                         <label for="nim" class="form-label">Tanggal Lahir</label>
-                                        <input type="date" name="tanggalLahir" id="tanggalLahir" class="form-control" required>
+                                        <input type="date" name="tanggalLahir" id="tanggalLahir"
+                                         class="form-control @error('tanggalLahir')is-invalid @enderror">
+                                         @error('tanggalLahir')
+                                         <div class="invalid-feedback">
+                                            {{ $message }}
+                                         </div>
+                                         @enderror
+
+
                                     </div>
                                     <div class="form-group">
                                         <label for="nim" class="form-label">Telpon</label>
-                                        <input type="text" name="telp" id="telp" class="form-control" required>
+                                        <input type="text" name="telp" id="telp"
+                                         class="form-control @error('telp')is-invalid @enderror">
+                                         @error('telp')
+                                         <div class="invalid-feedback">
+                                            {{ $message }}
+                                         </div>
+
+                                         @enderror
+
+
                                     </div>
                                     <div class="form-group">
                                         <label for="nim" class="form-label">Email</label>
-                                        <input type="text" name="email" id="email" class="form-control" required>
+                                        <input type="text" name="email" id="email"
+                                         class="form-control @error('email')is-invalid @enderror">
+                                         @error('email')
+                                         <div class="invalid-feedback">
+                                            {{ $message }}
+                                         </div>
+
+                                         @enderror
+
+
                                     </div>
                                     <div class="form-group">
                                         <label for="id_prodi" class="form-label">Prodi</label>
@@ -73,7 +122,16 @@
                                     </div>
                                     <div class="form-group">
                                         <label class="form-label" for="foto">Upload Foto</label>
-                                        <input type="file" class="form-control" id="foto" name="foto"/>
+                                        <input type="file" id="foto" name="foto"
+                                         class="form-control @error('foto')is-invalid @enderror">
+                                         @error('foto')
+                                         <div class="invalid-feedback">
+                                            {{ $message }}
+                                         </div>
+
+                                         @enderror
+
+
                                     </div>
 
                                 </table>
