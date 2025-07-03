@@ -146,7 +146,7 @@
                                 </tr>
                                 <tr>
                                     <td colspan="2">
-                                        <a href="index.php" class="btn btn-warning">Kembali</a>
+                                        <a href="{{ route('mahasiswa.index') }}" class="btn btn-warning">Kembali</a>
                                     </td>
                                 </tr>
                             </div>
